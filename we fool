@@ -1,5 +1,4 @@
-hookfunction(game.Players.LocalPlayer.IsInGroup, function() return true end)
-loadstring(game:HttpGet('https://raw.githubusercontent.com/SeigeDev/SeigeDev/main/AntiAiMViewer.lua'))()
+
 local Aiming = loadstring(game:HttpGet("https://pastebin.com/raw/3A9wdSkL"))()
 
 Aiming.TeamCheck(false)
@@ -21,22 +20,6 @@ local LocalPlayer = Players.LocalPlayer
 local Mouse = LocalPlayer:GetMouse()
 
 local CurrentCamera = Workspace.CurrentCamera
-
-
----------------------------------------------------------------
-local DaHoodSettings = {
-    
-    SilentAim = true,
-
-    AimLock = false,
-
-    Prediction = 0.1,
-
-    AimLockKeybind = Enum.KeyCode.E,
-
-    Resolver = true,
-    
-}
 -------------------------------------------------------------------------------
 getgenv().DaHoodSettings = DaHoodSettings
 getgenv().Aiming.FOV = 7
@@ -65,26 +48,6 @@ function Aiming.Check()
     return true
 
 end
-
-
-
-task.spawn(function()
-
-    while task.wait() do
-
-        if DaHoodSettings.Resolver and Aiming.Selected ~= nil and (Aiming.Selected.Character)  then
-
-            local oldVel = game.Players[Aiming.Selected.Name].Character.HumanoidRootPart.Velocity
-
-            game.Players[Aiming.Selected.Name].Character.HumanoidRootPart.Velocity = Vector3.new(oldVel.X, -0, oldVel.Z)
-
-        end 
-
-    end
-
-end)
-
-
 
 local Script = {Functions = {}}
 

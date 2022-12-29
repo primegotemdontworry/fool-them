@@ -23,9 +23,7 @@ local Mouse = LocalPlayer:GetMouse()
 local CurrentCamera = Workspace.CurrentCamera
 
 
-getgenv().DaHoodSettings = DaHoodSettings
-
-
+---------------------------------------------------------------
 local DaHoodSettings = {
     
     SilentAim = true,
@@ -39,7 +37,10 @@ local DaHoodSettings = {
     Resolver = true,
     
 }
-
+-------------------------------------------------------------------------------
+getgenv().DaHoodSettings = DaHoodSettings
+getgenv().Aiming.FOV = 7
+--------------------------------------------------- -fov 5.5-6.6 is legit
 
 function Aiming.Check()
 
